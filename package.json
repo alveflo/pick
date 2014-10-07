@@ -1,0 +1,25 @@
+{
+  "name": "pick",
+  "version": "0.1.0",
+  "description": "json expander",
+  "main": "pick.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorzki/pick.git"
+  },
+  "keywords": [
+    "json",
+    "picker",
+    "array",
+    "object"
+  ],
+  "author": "Victor Alveflo <victor.alveflo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorzki/pick/issues"
+  },
+  "homepage": "https://github.com/victorzki/pick"
+}
