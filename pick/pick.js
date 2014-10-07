@@ -1,11 +1,14 @@
-Object.prototype.pick = function(key) {
-	if (this.hasOwnProperty(key)) {
-		var ret = {};
-		ret[key] = this[key];
-		return ret;
+'use strict'
+
+Object.prototype.pick = function() {
+	var ret = {};
+	for (var i in arguments) {
+		var key = arguments[i];
+		if (this.hasOwnProperty(key)) {
+			ret[key] = this[key];
+		}
 	}
-	else
-		return null;
+	return ret;
 }
 
 Object.prototype.into = function(obj) {
