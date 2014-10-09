@@ -40,19 +40,36 @@ Object.prototype.pick = function() {
 
 Object.prototype.into = function(obj) {
 	if (obj != null) {
-		if (obj instanceof Array) {
-			for (var i = 0; i < obj.length; i++) {
-				obj.push()
+		if ((this instanceof Array) && (obj instanceof Array)) {
+			for (var i = 0; i < this.length; i++) {
+				obj.push(this[i]);
 			}
 		}
-		else {
+		else if ((this instanceof Object) && (obj instanceof Object)) {
 			for (var key in this) {
 				if (this.hasOwnProperty(key)) {
 					obj[key] = this[key];
 				}
 			}
 		}
-
 	}
 	return obj;
 };
+
+Array.prototype.mergeWith = function(array) {
+	if (this instanceof Array && array instanceof Array) {
+		for (var i = 0; i < array.length; i++) {
+			var dest = array[i];
+			for (var j = 0; j < this.length; j++) {
+				var obj = this[j];
+				for (var key in obj) {
+					if (obj.hasOwnProperty(key)) {
+						dest[key] = obj[key];
+					}
+				}
+			}
+			array[i] = dest;
+		}
+	}
+	return array;
+}
