@@ -56,6 +56,18 @@ Object.prototype.into = function(obj) {
 	return obj;
 };
 
+Object.prototype.mergeWith = function(array) {
+	if (array instanceof Array) {
+		for (var i = 0;i < array.length; i++) {
+			for (var key in this) {
+				if (this.hasOwnProperty(key))
+					array[i][key] = this[key];
+			}
+		}
+	}
+	return array;
+}
+
 Array.prototype.mergeWith = function(array) {
 	if (this instanceof Array && array instanceof Array) {
 		for (var i = 0; i < array.length; i++) {
