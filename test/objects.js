@@ -10,7 +10,7 @@ testObj = {
 	z: 3
 };
 
-describe('pick', function() {
+describe('Object pick', function() {
 	describe('pick()', function() {
 		var key = 'x';
 		var test = testObj.pick(key);
