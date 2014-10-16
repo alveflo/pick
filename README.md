@@ -4,7 +4,7 @@
 A javascript object and array extender that lets you write more elegant code.
 
 ## API
-### Object expandos
+### Object.prototype functions
 #### .pick(key)
 ```javascript
 var foo = { x: 1, y: 2 };
@@ -27,7 +27,7 @@ foo.pick('y')
    .mergeWith(bar);
 // -> bar = [ { x: 1, y: 2 }, { x: 2, y: 2 } ]
 ```
-### Array expandos
+### Array.prototype functions
 #### .pick(key)
 ```javascript
 var foo = [ { y: 1, z: 2 }, { y: 2, z: 3 }];
